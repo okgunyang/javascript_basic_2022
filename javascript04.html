@@ -18,9 +18,13 @@
     }
     var myCat = new Animal("양이", 5, "black"); //Animal클래로부터 얻어진 객체1
     myCat.family = "페르시안";      //속성 추가
-    myCat.toString = function(){
+    myCat.toString = function(){    //메소드 추가
         document.write(this.name+", "+this.age+", "+this.color+this.family+"<br>");
     };
+    for(var key in myCat){  //객체 순회
+        document.write(key+"<br>");
+    }
+    delete myCat.family;        //속성 제거
 
     var myDog = new Animal("멍이", 6, "white");//Animal클래로부터 얻어진 객체2
     
