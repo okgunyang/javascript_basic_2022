@@ -1952,3 +1952,287 @@ indexOf() 메소드는 인수로 전달받은 문자열을 해당 문자열에�
 ```
 
 
+## 데이터형 객체
+
+### Number 객체
+```javascript
+Number.isFinite(Infinity)  // false
+Number.isFinite(NaN)       // false
+Number.isFinite('Hello')   // false
+ 
+Number.isFinite(0)         // true
+Number.isFinite(2e64)      // true
+Number.isFinite(null)      // false. isFinite(null) => true
+
+Number.isInteger(123)   //true
+Number.isInteger(-123)  //true
+Number.isInteger(5-2)   //true
+Number.isInteger(0)     //true
+Number.isInteger(0.5)   //false
+Number.isInteger('123') //false
+Number.isInteger(false) //false
+Number.isInteger(Infinity)  //false
+Number.isInteger(-Infinity) //false
+Number.isInteger(0 / 0) //false
+
+Number.isNaN(NaN)       // true
+Number.isNaN(undefined) // false. undefined → NaN. isNaN(undefined) → true.
+Number.isNaN({})        // false. {} → NaN.        isNaN({}) → true.
+Number.isNaN('blabla')  // false. 'blabla' → NaN.  isNaN('blabla') → true.
+ 
+Number.isNaN(true)      // false
+Number.isNaN(null)      // false
+Number.isNaN(37)        // false
+Number.isNaN('37');     // false
+Number.isNaN('37.37');  // false
+Number.isNaN('');       // false
+Number.isNaN(' ');      // false
+Number.isNaN(new Date())             // false
+Number.isNaN(new Date().toString())  // false. String → NaN. isNaN(String) → true.
+
+Number.isSafeInteger(123)   //true
+Number.isSafeInteger(-123)  //true
+Number.isSafeInteger(5-2)   //true
+Number.isSafeInteger(0)     //true
+Number.isSafeInteger(1000000000000000)  // true
+Number.isSafeInteger(10000000000000001) // false
+Number.isSafeInteger(0.5)   //false
+Number.isSafeInteger('123') //false
+Number.isSafeInteger(Infinity)  //false
+Number.isSafeInteger(-Infinity) //false
+Number.isSafeInteger(0 / 0) //false
+
+var numObj = 77.1234;
+ 
+numObj.toExponential();  // logs 7.71234e+1
+numObj.toExponential(4); // logs 7.7123e+1
+numObj.toExponential(2); // logs 7.71e+1
+77.1234.toExponential(); // logs 7.71234e+1
+ 
+77.toExponential())      // SyntaxError: Invalid or unexpected token
+77 .toExponential();     // logs 7.7e+1
+
+77.toString(); // SyntaxError: Invalid or unexpected token
+1.23.toString (); // '1.23'
+(77).toString(); // '77'
+77 .toString(); // '77'
+
+var numObj = 12345.6789;
+
+// 소숫점 이하 반올림
+numObj.toFixed();   // '12346'
+// 소숫점 이하 1자리수 유효, 나머지 반올림
+numObj.toFixed(1);  // '12345.7'
+// 소숫점 이하 2자리수 유효, 나머지 반올림
+numObj.toFixed(2);  // '12345.68'
+
+var n = 123.112
+ 
+n.toPrecision(3)  // "123"
+n.toPrecision(4) // "123.1"
+n.toPrecision(5) // "123.11"
+
+var count = 10;
+count.toString();   // '10'
+(17).toString();    // '17'
+17 .toString();     // '17'
+(17.2).toString();  // '17.2'
+ 
+var x = 16;
+x.toString(2);       // '10000'
+x.toString(8);       // '20'
+x.toString(16);      // '10'
+ 
+(254).toString(16);  // 'fe'
+(-10).toString(2);   // '-1010'
+(-0xff).toString(2); // '-11111111
+
+var x = 0xAB; // 16진법으로 표현된 10진수 171
+var y = 29; // 10진법으로 표현된 10진수 29
+ 
+x + y; // 두 수 모두 10진법으로 자동으로 변환되어 계산됨. -> 200
+
+var num = 256;
+ 
+num.toString(2); // 2진법으로 변환 : 100000000
+num.toString(8); // 8진법으로 변환 : 400
+num.toString(10); // 10진법으로 변환 : 256
+num.toString(16); // 16진법으로 변환 : 100
+ 
+// 2진수로 변환한 결괏값을 문자열로 반환함.
+num.toString(2); // 100000000
+// 문자열을 숫자로 나눴기 때문에 자동으로 10진수로 변환되어 산술 연산된 결괏값
+(num.toString(2) / 2); // 50000000
+
+var numObj = new Number(10);
+typeof numObj; // object
+ 
+var num = numObj.valueOf();
+num;           // 10
+typeof num;    // number
+```
+
+#### Number 관련 속성
+| 속성 | 설명 |
+|-----------------|----------------------------------------|
+| MAX_VALUE | 자바스크립트에서 숫자 형태의 저장 가능한 가장 큰 값 반환 |
+| MIN_VALUE | 자바스크립트에서 숫자 형태의 저장 가능한 가장 작은 값 반환 |
+| POSITIVE_INFINITY | 자바스크립트 양의 무한대를 반환 |
+| NEGATIVE_INFINITY | 자바스크립트 음의 무한대를 반환 |
+| NaN | 자바스크립트 숫자가 아님을 의미하는 "Not a Number"를 반환 |
+
+#### Number 관련 메소드
+| 메소드 | 설명 |
+|-----------------|----------------------------------------|
+| 객체.toString(숫자 또는 표현식) | 숫자를 해당 형식의 문자열로 반환  |
+| 객체.toExpotential(숫자) | 유효자릿수의 소수점 이하 부분을 지정한 숫자 만큼 표시  |
+| Number(숫자형문자열 또는 숫자형문자열을 갖고 있는 변수명) | 해당 문자열을 숫자로 반환 |
+| parseInt(숫자형문자열 또는 숫자형문자열을 갖고 있는 변수명) | 해당 문자열을 정수로 반환 |
+| parseFloat(숫자형문자열 또는 숫자형문자열을 갖고 있는 변수명) | 해당 문자열을 실수로 반환 |
+| isNaN(값 또는 계산식) | 해당 값이 NaN이면, true, 아니면 false 반환 |
+| isFinite(값 또는 계산식) | 해당 값이 Finite이면, true, 아니면 false 반환 |
+| isInteger(값 또는 계산식) | 해당 값이 정수이면, true, 아니면 false 반환 |
+
+
+
+
+
+### Math 객체
+```javascript
+Math.abs(-1);       // 1
+Math.abs('-1');     // 1
+Math.abs('');       // 0
+Math.abs([]);       // 0
+Math.abs(null);     // 0
+Math.abs(undefined);// NaN
+
+Math.round(1.4);  // 1
+Math.round(1.6);  // 2
+Math.round(-1.4); // -1
+Math.round(-1.6); // -2
+Math.round(1);    // 1
+Math.round();     // NaN
+
+Math.ceil(1.4);  // 2
+Math.ceil(1.6);  // 2
+Math.ceil(-1.4); // -1
+Math.ceil(-1.6); // -1
+Math.ceil(1);    // 1
+Math.ceil();     // NaN
+
+Math.floor(1.9);  // 1
+Math.floor(9.1);  // 9
+Math.floor(-1.9); // -2
+Math.floor(-9.1); // -10
+Math.floor(1);    // 1
+Math.floor();     // NaN
+
+Math.sqrt(9);  // 3
+Math.sqrt(-9); // NaN
+Math.sqrt(2);  // 1.414213562373095
+Math.sqrt(1);  // 1
+Math.sqrt(0);  // 0
+Math.sqrt();   // NaN
+
+const random = Math.floor((Math.random() * 10) + 1);
+console.log(random); // 1 ~ 10까지의 정수
+
+Math.pow(2, 8);  // 256
+Math.pow(2, -1); // 0.5
+
+Math.max(1, 2, 3); // 3
+ 
+// 배열 요소 중에서 최대값 취득
+// max()  인수로 배열을 받을 수 없으니, 배열을 인수로 받는 apply를 사용
+const arr = [1, 2, 3];
+const max = Math.max.apply(null, arr); // 3
+// ES6 문법
+Math.max(...arr); // 3
+[...rest] = [1,2,4]; // rest = [1,2,4]
+Math.max(...rest); //4
+
+Math.min(1, 2, 3); // 1
+ 
+// 배열 요소 중에서 최소값 취득
+const arr = [1, 2, 3];
+const min = Math.min.apply(null, arr); // 1
+// ES6 문법
+Math.min(...arr); // 1
+```
+
+#### Math 관련 메소드
+| 메소드 | 설명 |
+|-----------------|----------------------------------------|
+| Math.min(x, y, ...) | 인수로 전달받은 값 중에서 가장 작은 수를 반환 |
+| Math.max(x, y, ...) | 인수로 전달받은 값 중에서 가장 큰 수를 반환 |
+| Math.random()	0보다 크거나 같고 1보다 작은 랜덤 숫자(random number)를 반환함.
+Math.round(x)	x를 소수점 첫 번째 자리에서 반올림하여 그 결과를 반환함.
+Math.floor(x)	x와 같거나 작은 수 중에서 가장 큰 정수를 반환함.
+Math.ceil(x)	x와 같거나 큰 수 중에서 가장 작은 정수를 반환함.
+Math.abs(x)	x의 절댓값을 반환함.
+Math.cbrt(x)	x의 세제곱근을 반환함.
+Math.sqrt(x)	x의 제곱근을 반환함.
+Math.clz32(x)	x을 32비트 이진수로 변환한 후, 0이 아닌 비트의 개수를 반환함.
+Math.exp(x)	ex 의 값을 반환함. (e : 오일러의 수)
+Math.expm1(x)	1 - ex 의 값을 반환함.
+Math.fround(x)	x와 가장 근접한 32비트 부동 소수점 수(single precision float)를 반환함.
+Math.hypot(x, y, ...)	인수로 전달받은 값들을 각각 제곱한 후 더한 총합의 제곱근을 반환함.
+Math.imul(x, y)	인수로 전달받은 두 값의 32비트 곱셈의 결과를 반환함.
+Math.log(x)	x의 자연로그 값을 반환함. (ln x)
+Math.log1p(x)	ln(1 + x)의 값을 반환함.
+Math.log10(x)	x의 10을 밑으로 가지는 로그 값을 반환함.
+Math.log2(x)	x의 2를 밑으로 가지는 로그 값을 반환함.
+Math.pow(x, y)	x의 y승을 반환함.
+Math.sign(x)	x의 부호 값을 반환함.
+Math.trunc(x)	x의 모든 소수 부분을 삭제하고 정수 부분만을 반환함.
+Math.sin(x), Math.cos(x), Math.tan(x),Math.asin(x), Math.acos(x), Math.atan(x), Math.asinh(x), Math.acosh(x), Math.atanh(x), Math.atan2(x)	x의 해당 삼각 함숫값을 반환함.
+
+### Date 객체
+```javascript
+```
+
+### String 객체
+```javascript
+```
+
+### Array 객체
+```javascript
+```
+
+### 기타 객체
+
+#### 타이머 객체
+```javascript
+```
+
+#### 대화상자 객체
+```javascript
+```
+
+---------------------------------------------------------------
+
+## BOM(Browser Object Model) 객체
+
+### Window 객체
+```javascript
+```
+
+### Screen 객체
+```javascript
+```
+
+### Location 객체
+```javascript
+```
+
+### History 객체
+```javascript
+```
+
+### Navigator 객체
+```javascript
+```
+
+## DOM(Document Object Model) 객체
+
+### Document Element
