@@ -2094,9 +2094,6 @@ typeof num;    // number
 | isInteger(값 또는 계산식) | 해당 값이 정수이면, true, 아니면 false 반환 |
 
 
-
-
-
 ### Math 객체
 ```javascript
 Math.abs(-1);       // 1
@@ -2160,53 +2157,847 @@ const min = Math.min.apply(null, arr); // 1
 Math.min(...arr); // 1
 ```
 
+#### Math 관련 속성
+| 속성 | 설명 |
+|-----------------|----------------------------------------|
+| Math.E | 오일러의 수(Euler's constant) 값	: 2.718 |
+| Math.LN2 | 2의 자연로그 값 : 0.693 |
+| Math.LN10 | 10의 자연로그 값 : 2.303 |
+| Math.LOG2E | 오일러 수(e)의 밑 값이 2인 로그 값 : 1.443 |
+| Math.LOG10E	| 오일러 수(e)의 밑 값이 10인 로그 값 : 0.434 |
+| Math.PI | 원의 원주율 값 : 3.14159 |
+| Math.SQRT1_2 | 2의 제곱근의 역수 값 : 0.707 |
+| Math.SQRT2 | 2의 제곱근 값 : 1.414 |
+
+
 #### Math 관련 메소드
 | 메소드 | 설명 |
 |-----------------|----------------------------------------|
 | Math.min(x, y, ...) | 인수로 전달받은 값 중에서 가장 작은 수를 반환 |
 | Math.max(x, y, ...) | 인수로 전달받은 값 중에서 가장 큰 수를 반환 |
-| Math.random()	0보다 크거나 같고 1보다 작은 랜덤 숫자(random number)를 반환함.
-Math.round(x)	x를 소수점 첫 번째 자리에서 반올림하여 그 결과를 반환함.
-Math.floor(x)	x와 같거나 작은 수 중에서 가장 큰 정수를 반환함.
-Math.ceil(x)	x와 같거나 큰 수 중에서 가장 작은 정수를 반환함.
-Math.abs(x)	x의 절댓값을 반환함.
-Math.cbrt(x)	x의 세제곱근을 반환함.
-Math.sqrt(x)	x의 제곱근을 반환함.
-Math.clz32(x)	x을 32비트 이진수로 변환한 후, 0이 아닌 비트의 개수를 반환함.
-Math.exp(x)	ex 의 값을 반환함. (e : 오일러의 수)
-Math.expm1(x)	1 - ex 의 값을 반환함.
-Math.fround(x)	x와 가장 근접한 32비트 부동 소수점 수(single precision float)를 반환함.
-Math.hypot(x, y, ...)	인수로 전달받은 값들을 각각 제곱한 후 더한 총합의 제곱근을 반환함.
-Math.imul(x, y)	인수로 전달받은 두 값의 32비트 곱셈의 결과를 반환함.
-Math.log(x)	x의 자연로그 값을 반환함. (ln x)
-Math.log1p(x)	ln(1 + x)의 값을 반환함.
-Math.log10(x)	x의 10을 밑으로 가지는 로그 값을 반환함.
-Math.log2(x)	x의 2를 밑으로 가지는 로그 값을 반환함.
-Math.pow(x, y)	x의 y승을 반환함.
-Math.sign(x)	x의 부호 값을 반환함.
-Math.trunc(x)	x의 모든 소수 부분을 삭제하고 정수 부분만을 반환함.
-Math.sin(x), Math.cos(x), Math.tan(x),Math.asin(x), Math.acos(x), Math.atan(x), Math.asinh(x), Math.acosh(x), Math.atanh(x), Math.atan2(x)	x의 해당 삼각 함숫값을 반환함.
+| Math.random() | 0보다 크거나 같고 1보다 작은 랜덤 숫자(random number)를 반환 |
+| Math.round(x) | x를 소수점 첫 번째 자리에서 반올림하여 그 결과를 반환 |
+| Math.floor(x)	| x와 같거나 작은 수 중에서 가장 큰 정수를 반환 |
+| Math.ceil(x) | x와 같거나 큰 수 중에서 가장 작은 정수를 반환 |
+| Math.abs(x) | x의 절댓값을 반환 |
+| Math.cbrt(x) | x의 세제곱근을 반환 |
+| Math.sqrt(x) | x의 제곱근을 반환 |
+| Math.clz32(x) | x을 32비트 이진수로 변환한 후, 0이 아닌 비트의 개수를 반환 |
+| Math.exp(x) | ex(지수:Expotential) 의 값을 반환 |
+| Math.expm1(x) | 1 - ex 의 값을 반환 |
+| Math.fround(x) | x와 가장 근접한 32비트 부동 소수점 수(single precision float)를 반환 |
+| Math.hypot(x, y, ...) | 인수로 전달받은 값들을 각각 제곱한 후 더한 총합의 제곱근을 반환 |
+| Math.imul(x, y) | 인수로 전달받은 두 값의 32비트 곱셈의 결과 반환 |
+| Math.log(x) | x의 자연로그 값을 반환 |
+| Math.log1p(x) | ln(1 + x)의 값을 반환 |
+| Math.log10(x) | x의 10을 밑으로 가지는 로그 값을 반환 |
+| Math.log2(x) | x의 2를 밑으로 가지는 로그 값을 반환 |
+| Math.pow(x, y) | x의 y승을 반환 |
+| Math.sign(x) | x의 부호 값을 반환 |
+| Math.trunc(x) | x의 모든 소수 부분을 삭제하고 정수 부분만을 반환 |
+| Math.sin(x) | x는 각도로서 해당 sin 삼각 함수 결과값 반환 |
+| Math.cos(x) | x는 각도로서 해당 cos 삼각 함수 결과값 반환 |
+| Math.tan(x) | x는 각도로서 해당 tan 삼각 함수 결과값 반환 |
+| Math.asin(x) | x는 각도로서 해당 asin 삼각 함수 결과값 반환 |
+| Math.acos(x) | x는 각도로서 해당 acos 삼각 함수 결과값 반환 |
+| Math.atan(x) | x는 각도로서 해당 atan 삼각 함수 결과값 반환 |
+| Math.asinh(x) | x는 각도로서 해당 asinh 삼각 함수 결과값 반환 |
+| Math.acosh(x) | x는 각도로서 해당 acosh 삼각 함수 결과값 반환 |
+| Math.atanh(x) | x는 각도로서 해당 atanh 삼각 함수 결과값 반환 |
+| Math.atan2(x) | x는 각도로서 해당 atanh2 삼각 함수 결과값 반환 |	
 
 ### Date 객체
 ```javascript
+const date1 = new Date();
+console.log(date1);  //현재 시간 출력
+
+let date2 = new Date('May 16, 2019 17:22:10');
+console.log(date2); // Thu May 16 2019 17:22:10 GMT+0900 (한국 표준시)
+ 
+date2 = new Date('2019/05/16/17:22:10');
+console.log(date2); // Thu May 16 2019 17:22:10 GMT+0900 (한국 표준시)
+
+
+let date3 = new Date(2019, 4);
+console.log(date3); // Wed May 01 2019 00:00:00 GMT+0900 (한국 표준시)
+ 
+// 월을 나타내는 4는 5월을 의미한다.
+// 2019/5/16/17:24:30:00
+date3 = new Date(2019, 4, 16, 17, 24, 30, 0);
+console.log(date3); // Thu May 16 2019 17:24:30 GMT+0900 (한국 표준시)
+ 
+// new Date(dateString) 형식이 가독성이 훨씬 좋다.
+date3 = new Date('2019/5/16/17:24:30:10');
+console.log(date3); // Thu May 16 2019 17:24:30 GMT+0900 (한국 표준시)
+
+let date4 = Date();
+console.log(typeof date4); // string 
+console.log(date4); // "Thu May 16 2019 17:33:03 GMT+0900 (한국 표준시)"
+ 
+let date5 = new Date();
+console.log(typeof date5); // object
+console.log(date5); // Thu May 16 2019 17:33:03 GMT+0900 (한국 표준시) { }
+ 
+// Object라 메소드를 사용할수 있다.
+console.log(date5.getDay()); // 6
+
+let d = Date.parse('Jan 2, 1970 00:00:00 UTC'); // UTC
+console.log(d); // 86400000
+ 
+d = Date.parse('Jan 2, 1970 09:00:00'); // KST
+console.log(d); // 86400000
+ 
+d = Date.parse('1970/01/02/09:00:00'); // KST
+console.log(d); // 86400000
+
+d = Date.UTC(1970, 0, 2);
+console.log(d); // 86400000
+ 
+d = Date.UTC('1970/1/2');
+console.log(d); // NaN
+
+const today = new Date();
+ 
+// 월을 지정
+today.setMonth(0); // 1월
+ 
+console.log(today); // Wed Jan 16 2019 17:45:20 GMT+0900 (한국 표준시)
+console.log(today.getMonth()); // 0
+ 
+// 월/일을 지정
+today.setMonth(11, 1); // 12월 1일
+ 
+console.log(today); // Sun Dec 01 2019 17:45:20 GMT+0900 (한국 표준시)
+console.log(today.getMonth()); // 1
+
+const today2 = new Date();
+ 
+// 날짜 지정
+today2.setDate(1);
+ 
+console.log(today2); // Wed May 01 2019 17:47:01 GMT+0900 (한국 표준시)
+console.log(today2.getDate());  // 1
+
+const today = new Date();
+ 
+// 시간 지정
+today3.setHours(7);
+ 
+console.log(today3); // Thu May 16 2019 07:49:06 GMT+0900 (한국 표준시)
+console.log(today3.getHours()); // 7
+ 
+// 시간/분/초/밀리초 지정
+today3.setHours(0, 0, 0, 0); // 00:00:00:00
+ 
+console.log(today3); // Thu May 16 2019 00:00:00 GMT+0900 (한국 표준시)
+console.log(today3.getHours()); // 0
+
+const today4 = new Date();
+ 
+// 분 지정
+today4.setMinutes(50);
+ 
+console.log(today4);   // Thu May 16 2019 17:50:30 GMT+0900 (한국 표준시)
+console.log(today4.getMinutes()); // 50
+ 
+// 분/초/밀리초 지정
+today4.setMinutes(5, 10, 999); // HH:05:10:999
+ 
+console.log(today4);   // Thu May 16 2019 17:05:10 GMT+0900 (한국 표준시)
+console.log(today4.getMinutes()); // 5
+
+const today5 = new Date();
+ 
+// 초 지정
+today5.setSeconds(30);
+ 
+console.log(today5);   // Thu May 16 2019 17:54:30 GMT+0900 (한국 표준시)
+console.log(today5.getSeconds()); // 30
+ 
+// 초/밀리초 지정
+today5.setSeconds(10, 0); // HH:MM:10:000
+ 
+console.log(today5);   // Thu May 16 2019 17:54:10 GMT+0900 (한국 표준시)
+console.log(today5.getSeconds()); // 10
+
+const today6 = new Date();
+ 
+// 밀리초 지정
+today6.setMilliseconds(123);
+ 
+console.log(today6); // Thu May 16 2019 17:55:45 GMT+0900 (한국 표준시)
+console.log(today6.getMilliseconds());    // 123
+
+const today7 = new Date(); // Fri Jan 01 1970 09:00:00 GMT+0900 (한국 표준시)
+ 
+// 1970년 1월 1일 00:00:00(UTC)를 기점으로 현재 시간까지 경과된 밀리초 지정
+today7.setTime(86400000); // 86400000 === 1day
+ 
+console.log(today7); // Fri Jan 02 1970 09:00:00 GMT+0900 (한국 표준시)
+console.log(today7.getTime());  // 86400000
+
+const today8 = new Date();
+const x8 = today8.getTimezoneOffset() / 60; // 분단위값을 60으로 나눈다
+ 
+console.log(today8); // Thu May 16 2019 17:58:13 GMT+0900 (한국 표준시)
+console.log(x8);     // -9
+
+const d9 = new Date('2019/5/16/18:30');
+ 
+console.log(d9.toString());     // Thu May 16 2019 18:30:00 GMT+0900 (한국 표준시)
+console.log(d9.toDateString()); // Thu May 16 2019
+
+const d10 = new Date('2019/5/16/18:30');
+ 
+console.log(d10.toString());     // Thu May 16 2019 18:30:00 GMT+0900 (한국 표준시)
+console.log(d10.toTimeString()); // 18:30:00 GMT+0900 (한국 표준시)
 ```
+
+```javascript
+//현재 날짜와 시간을 초단위로 반복 출력하는 예시
+(function printNow() {
+  const today = new Date();
+ 
+  const dayNames = ['(일)', '(월)', '(화)', '(수)', '(목)', '(금)', '(토)'];
+  // getDay: 해당 요일(0 ~ 6)를 나타내는 정수를 반환한다.
+  const day = dayNames[today.getDay()];
+ 
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const date = today.getDate();
+  let hour = today.getHours();
+  let minute = today.getMinutes();
+  let second = today.getSeconds();
+ 
+  const ampm = hour >= 12 ? 'PM' : 'AM';
+ 
+  // 12시간제로 변경
+  hour %= 12;
+  hour = hour || 12; // 12시,24시라서 나누어 떨어져서 0이면 12로 재설정 (12시간제)
+ 
+  // 10미만인 분과 초를 2자리로 변경
+  minute = minute < 10 ? '0' + minute : minute;
+  second = second < 10 ? '0' + second : second;
+ 
+  const now = `${year}년 ${month}월 ${date}일 ${day} ${hour}:${minute}:${second} ${ampm}`;
+ 
+  console.log(now);
+  setTimeout(printNow, 1000); // 1초마다 재귀처리
+}());
+```
+
+```javascript
+//날짜 계산 방법 - 현재, 어제, 내일, 한달 전, 한달 후
+var today = new Date();	// 현재 날짜 및 시간
+console.log("현재 : ", today);
+ 
+var yesterday = new Date(today.setDate(today.getDate() - 1));	// 어제
+console.log("어제 : ", yesterday);
+ 
+var tomorrow = new Date(today.setDate(today.getDate() + 1));	// 내일
+console.log("내일 : ", tomorrow);
+
+var oneMonthAgo = new Date(today.setMonth(today.getMonth() - 1));	// 한달 전
+console.log("한달 전 : ", oneMonthAgo);
+ 
+var oneMonthLater = new Date(today.setMonth(today.getMonth() + 1));	// 한달 후
+console.log("한달 후 : ", oneMonthLater);
+
+var oneYearAgo = new Date(today.setYear(today.getFullYear() - 1));	// 1년 전
+console.log("한달 전 : ", oneYearAgo);
+ 
+var oneYearLater = new Date(today.setYear(today.getFullYear() + 1));	// 1년 후
+console.log("한달 후 : ", oneYearLater);
+```
+
+#### Date 객체가 가지는 인자
+| 인자 | 설명 |
+|-----------------|----------------------------------------|
+| year | 1900년 이후의 년 |
+| month | 월을 나타내는 0 ~ 11까지의 정수 (주의: 0부터 시작, 0 = 1월) |
+| day | 일을 나타내는 1 ~ 31까지의 정수 |
+| hour | 시를 나타내는 0 ~ 23까지의 정수 |
+| minute | 분을 나타내는 0 ~ 59까지의 정수 |
+| second | 초를 나타내는 0 ~ 59까지의 정수 |
+| millisecond | 밀리초를 나타내는 0 ~ 999까지의 정수 |
+
+#### Date 관련 메소드
+| 메소드 | 설명(값의 범위) |
+|-----------------|----------------------------------------|
+| getDate()	| 현지 시각으로 현재 일자에 해당하는 숫자를 반환(1 ~ 31) |
+| getDay()	| 현지 시각으로 현재 요일에 해당하는 숫자를 반환(0 ~ 6) |
+| getMonth() | 현지 시각으로 현재 월에 해당하는 숫자를 반환(0 ~ 11) |
+| getFullYear()	| 현지 시각으로 현재 연도를 4비트의 숫자(YYYY)로 반환(YYYY) |
+| getHours() | 현지 시각으로 현재 시각에 해당하는 숫자를 반환(0 ~ 23) |
+| getMilliseconds()	| 현지 시각으로 현재 시각의 밀리초에 해당하는 숫자를 반환(0 ~ 999) |
+| getMinutes() | 현지 시각으로 현재 시각의 분에 해당하는 숫자를 반환(0 ~ 59) |
+| getSeconds() | 현지 시각으로 현재 시각의 초에 해당하는 숫자를 반환(0 ~ 59) |
+| getTime()	| 1970년 1월 1일 0시 0분 0초부터 현재까지의 시간을 밀리초 단위로 환산한 값을 숫자로 반환 |
+| getTimezoneOffset() | UTC로부터 현재 시각까지의 시간차를 분 단위로 환산한 값을 숫자로 반환 |
+| setDate() | 현지 시각으로 특정 일자를 설정(1 ~ 31) |
+| setMonth() | 현지 시각으로 특정 월을 설정(0 ~ 11) |
+| setFullYear() | 현지 시각으로 특정 연도를 설정 (연도뿐만 아니라 월과 일자도 설정할 수 있음)	YYYY, MM, DD |
+| setHours() | 현지 시각으로 특정 시간을 설정(0 ~ 23) |
+| setMilliseconds() | 현지 시각으로 특정 밀리초를 설정함(0 ~ 999) |
+| setMinutes() | 현지 시각으로 특정 분을 설정(0 ~ 59) |
+| setSeconds() | 현지 시각으로 특정 초를 설정(0 ~ 59) |
+| setTime() | 1970년 1월 1일 0시 0분 0초부터 밀리초 단위로 표현되는 특정 시간을 설정 |
+
 
 ### String 객체
 ```javascript
+var str1 = 'Hello';
+console.log(str1.length); // 글자수 -> 5
+
+var str = 'Hello';
+console.log(str.charAt(0)); // H
+console.log(str.charAt(1)); // e
+console.log(str.charAt(2)); // l
+console.log(str.charAt(3)); // l
+console.log(str.charAt(4)); // o
+ 
+// 지정한 index가 범위(0 ~ str.length-1)를 벗어난 경우 빈문자열을 반환한다.
+console.log(str.charAt(5)); // ''
+ 
+// 문자열 순회. 문자열은 length 프로퍼티를 갖는다.
+for (let i = 0; i < str.length; i++) {
+  console.log(str.charAt(i));
+}
+ 
+// String 객체는 유사 배열 객체이므로 배열과 유사하게 접근할 수 있다.
+for (let i = 0; i < str.length; i++) {
+  console.log(str[i]); // str['0']
+}
+
+str = 'Hello World';
+ 
+console.log(str.indexOf('l'));  // 2
+console.log(str.indexOf('or')); // 7
+console.log(str.indexOf('or' , 8)); // -1
+ 
+if (str.indexOf('Hello') !== -1) {
+  // 문자열 str에 'hello'가 포함되어 있는 경우에 처리할 내용
+}
+ 
+// ES6: String.prototype.includes
+if (str.includes('Hello')) {
+  // 문자열 str에 'hello'가 포함되어 있는 경우에 처리할 내용
+}
+
+console.log(str.lastIndexOf('World')); // 6
+console.log(str.lastIndexOf('l'));     // 9
+console.log(str.lastIndexOf('o', 5));  // 4
+console.log(str.lastIndexOf('o', 8));  // 7
+console.log(str.lastIndexOf('l', 10)); // 9
+ 
+console.log(str.lastIndexOf('H', 0));  // 0
+console.log(str.lastIndexOf('W', 5));  // -1
+console.log(str.lastIndexOf('x', 8));  // -1
+
+// 첫번째로 검색된 문자열만 대체하여 새로운 문자열을 반환한다.
+str.replace('world', 'Kim'); // Hello Kim
+ 
+// 특수한 교체 패턴을 사용할 수 있다. ($& => 검색된 문자열)
+str.replace('world', '<strong>$&</strong>'); // Hello <strong>world</strong>
+ 
+/* 정규표현식
+g(Global): 문자열 내의 모든 패턴을 검색한다.
+i(Ignore case): 대소문자를 구별하지 않고 검색한다.
+*/
+str.replace(/hello/gi, 'Kim'); // Kim world
+
+var camelCase = 'helloWorld';
+ 
+// 두번째 인수로 치환 함수를 전달할 수 있다.
+// 특정 문자를 검색해 모두 대문자로 치환 하는 코드
+// 문자를 찾아 인수로 match에 대입해 함수 실행
+camelCase.replace("World", match => match.toUpperCase()); // "helloWORLD"
+ 
+ 
+// /.[A-Z]/g => 1문자와 대문자의 조합을 문자열 전체에서 검색한다.
+camelCase.replace(/.[A-Z]/g, function (match) {
+  // match : oW => match[0] : o, match[1] : W
+  return match[0] + '_' + match[1].toLowerCase();
+}); // hello_world
+ 
+ 
+// /(.)([A-Z])/g => 1문자와 대문자의 조합
+// $1 => (.)
+// $2 => ([A-Z])
+camelCase.replace(/(.)([A-Z])/g, '$1_$2').toLowerCase(); // hello_world
+
+var snake_case = 'hello_world';
+ 
+// /_./g => _와 1문자의 조합을 문자열 전체에서 검색한다.
+snake_case.replace(/_./g, function (match) {
+  // match : _w => match[1] : w
+  return match[1].toUpperCase();
+}); // helloWorld
+
+str.replace(' ','') // 첫번째 공백 제거
+str.replace(/\-/g,'') // 특정문자 제거1 (-)
+str.replace(/,/g,'') // 특정문자 제거2(,)
+str.replace(/^\s+/,'') // 앞의 공백 제거
+str.replace(/\s+$/,'') // 뒤의 공백 제거
+str.replace(/^\s+|\s+$/g,'') // 앞뒤 공백 제거
+str.replace(/\s/g,'') // 문자열 내의 모든 공백 제거
+str.replace(/\n/g,'') // n개행 제거
+str.replace(/\r/g,'') // 엔터 제거
+
+str = 'How are you doing?';
+ 
+// 공백으로 구분(단어로 구분)하여 배열로 반환한다
+console.log(str.split(' ')); // [ 'How', 'are', 'you', 'doing?' ]
+ 
+// 각 문자를 모두 분리한다
+console.log(str.split('')); // [ 'H','o','w',' ','a','r','e',' ','y','o','u',' ','d','o','i','n','g','?' ]
+ 
+// 정규 표현식
+console.log(str.split(/\s/)); // [ 'How', 'are', 'you', 'doing?' ]
+ 
+// 인수가 없는 경우, 대상 문자열 전체를 단일 요소로 하는 배열을 반환한다.
+console.log(str.split()); // [ 'How are you doing?' ]
+ 
+// 공백으로 구분하여 배열로 반환한다. 단 요소수는 3개까지만 허용한다
+console.log(str.split(' ', 3)); // [ 'How', 'are', 'you' ]
+ 
+// 'o'으로 구분하여 배열로 반환한다.
+console.log(str.split('o')); // [ 'H', 'w are y', 'u d', 'ing?' ]
+
+str = 'Hello World'; // str.length == 11
+ 
+str.substring(1, 4); // ell
+ 
+// 첫번째 인수 > 두번째 인수 : 순서 맞추기 위해 자동 교환된다.
+str.substring(4, 1); // ell
+ 
+// 두번째 인수가 생략된 경우 : 해당 문자열의 끝까지 반환한다.
+str.substring(4); // o World
+str.substring(4,); // o World
+ 
+// 인수 < 0 또는 NaN인 경우 : 0으로 취급된다.
+str.substring(-2); // Hello World
+ 
+// 인수 > 문자열의 길이(str.length) : 인수는 문자열의 길이(str.length)으로 취급된다.
+str.substring(1, 12); // ello World
+str.substring(11); // '' str[10] == 'd'
+str.substring(20); // ''
+str.substring(0, str.indexOf(' ')); // 'Hello'
+str.substring(str.indexOf(' ') + 1, str.length); // 'World'
+
+str = 'hello world';
+ 
+// 인수 < 0 또는 NaN인 경우 : 0으로 취급된다.
+str.substring(-5); // 'hello world'
+// 뒤에서 5자리를 잘라내어 반환한다.
+str.slice(-5); // 'world'
+ 
+// 2번째부터 마지막 문자까지 잘라내어 반환
+tr.substring(2); // llo world
+str.slice(2); // llo world
+ 
+// 0번째부터 5번째 이전 문자까지 잘라내어 반환
+str.substring(0, 5); // hello
+str.slice(0, 5); // hello
+
+str = '   foo  ';
+ 
+console.log(str.trim()); // 'foo'
+ 
+// String.prototype.replace
+console.log(str.replace(/\s/g, ''));   // 'foo'
+console.log(str.replace(/^\s+/g, '')); // 'foo  '
+console.log(str.replace(/\s+$/g, '')); // '   foo'
+ 
+// String.prototype.{trimStart,trimEnd} : Proposal stage 3
+console.log(str.trimStart()); // 'foo  '
+console.log(str.trimEnd());   // '   foo'
+
+'abc'.repeat(0);   // ''
+'abc'.repeat(1);   // 'abc'
+'abc'.repeat(2);   // 'abcabc'
+'abc'.repeat(2.5); // 'abcabc' (2.5 → 2)
+'abc'.repeat(-1);  // RangeError: Invalid count value
+
+str = 'hello world';
+ 
+str.includes('hello'); // true
+str.includes('hello', 0); // true
+str.includes('hello', 2); // false
+ 
+// String​.prototype​.indexOf 메소드로 대체할 수 있다.
+str.indexOf('hello'); // 0
+
+'abc'.padStart(10);         // "       abc"
+'abc'.padStart(10, "foo");  // "foofoofabc"
+'abc'.padStart(6,"123465"); // "123abc"
+'abc'.padStart(8, "0");     // "00000abc"
+'abc'.padStart(1);          // "abc"
+
+'abc'.padEnd(10);          // "abc       "
+'abc'.padEnd(10, "foo");   // "abcfoofoof"
+'abc'.padEnd(6, "123456"); // "abc123"
+'abc'.padEnd(1);           // "abc"
 ```
+
+#### String 객체의 정규식 패턴
+| $` | 문자 대체(replace) 시 일치한 문자 이전 값 참조 |
+| $' | 문자 대체(replace) 시 일치한 문자 이후 값 참조 |
+| $+ | 문자 대체(replace) 시 마지막으로 캡처된 값 참조 |
+| $& | 문자 대체(replace) 시 일치한 문자 결과 전체 참조 |
+| $_ | 문자 대체(replace) 시 입력(input)된 문자 전체 참조 |
+| $1~9 | 문자 대체(replace) 시 캡처(Capture)된 값 참조 |
+
+#### String 관련 메소드
+| 메소드 | 설명 |
+|-----------------|----------------------------------------|
+| String.fromCharCode() | 쉼표로 구분되는 일련의 유니코드에 해당하는 문자들로 구성된 문자열을 반환 |
+| String.fromCodePoint() | 쉼표로 구분되는 일련의 코드 포인트(code point)에 해당하는 문자들로 구성된 문자열을 반환 |
+| String.raw() | 템플릿 문자열(template string)의 원형을 반환 |
+| 인스턴스.indexOf(찾을값) | String 인스턴스에서 특정 문자나 문자열이 처음으로 등장하는 위치의 인덱스를 반환 |
+| 인스턴스.lastIndexOf(찾을값) | String 인스턴스에서 특정 문자나 문자열이 마지막으로 등장하는 위치의 인덱스를 반환 |
+| 인스턴스.charAt(인덱스) | String 인스턴스에서 전달받은 인덱스에 위치한 문자를 반환함.
+| 인스턴스.charCodeAt(인덱스) | String 인스턴스에서 전달받은 인덱스에 위치한 문자의 UTF-16 코드를 반환 (0 ~ 65535) |
+| 인스턴스.charPointAt(인덱스) | String 인스턴스에서 전달받은 인덱스에 위치한 문자의 유니코드 코드 포인트(unicode code point)를 반환 |
+| 인스턴스.slice(시작인덱스, 종료인덱스) | String 인스턴스에서 전달받은 시작 인덱스부터 종료 인덱스 바로 앞까지의 문자열을 추출한 새 문자열을 반환 |
+| 인스턴스.substring(시작인덱스, 종료인덱스) | String 인스턴스에서 전달받은 시작 인덱스부터 종료 인덱스 바로 앞까지의 문자열을 추출한 새 문자열을 반환 |
+| 인스턴스.substr(시작인덱스, 글자수) | String 인스턴스에서 전달받은 시작 인덱스부터 길이만큼의 문자열을 추출한 새로운 문자열을 반환 |
+| 인스턴스.split("구분기호") | String 인스턴스에서 구분자(separator)를 기준으로 나눈 후, 나뉜 문자열을 하나의 배열로 반환 |
+| 인스턴스.concat(결합한문자열) | String 인스턴스에 전달받은 문자열을 결합한 새로운 문자열을 반환 |
+| 인스턴스.toUpperCase() | String 인스턴스의 모든 문자를 대문자로 변환한 새로운 문자열을 반환 |
+| 인스턴스.toLowerCase() | String 인스턴스의 모든 문자를 소문자로 변환한 새로운 문자열을 반환 |
+| 인스턴스.trim() | String 인스턴스의 양 끝에 존재하는 공백과 모든 줄 바꿈 문자(LF, CR 등)를 제거한 새로운 문자열을 반환 |
+| 인스턴스.search(찾을값) | 인수로 전달받은 정규 표현식에 맞는 문자나 문자열이 처음으로 등장하는 위치의 인덱스를 반환 |
+| 인스턴스.replace(찾을값, 바꿀값) | 인수로 전달받은 패턴에 맞는 문자열을 대체 문자열로 변환한 새 문자열을 반환 |
+| 인스턴스.match(찾을값) | 인수로 전달받은 정규 표현식에 맞는 문자열을 찾아서 하나의 배열로 반환 |
+| 인스턴스.includes(찾을값) | 인수로 전달받은 문자나 문자열이 포함되어 있는지를 검사한 후 그 결과를 불리언 값으로 반환 |
+| 인스턴스.startsWith(찾을값) | 인수로 전달받은 문자나 문자열로 시작되는지를 검사한 후 그 결과를 불리언 값으로 반환 |
+| 인스턴스.endsWith(찾을값) | 인수로 전달받은 문자나 문자열로 끝나는지를 검사한 후 그 결과를 불리언 값으로 반환 |
+| 인스턴스.toLocaleUpperCase() | 영문자뿐만 아니라 모든 언어의 문자를 대문자로 변환한 새로운 문자열을 반환 |
+| 인스턴스.toLocaleLowerCase() | 영문자뿐만 아니라 모든 언어의 문자를 소문자로 변환한 새로운 문자열을 반환 |
+| 인스턴스.localeCompare() | 인수로 전달받은 문자열과 정렬 순서로 비교하여 그 결과를 정수 값으로 반환 |
+| 인스턴스.normalize() | 해당 문자열의 유니코드 표준화 양식(Unicode Normalization Form)을 반환 |
+| 인스턴스.repeat(숫자) | 해당 문자열을 인수로 전달받은 횟수만큼 반복하여 결합한 새로운 문자열을 반환 |
+| 인스턴스.toString("표시패턴 또는 숫자") | String 인스턴스의 값을 문자열로 반환 |
+| 인스턴스.valueOf() | String 인스턴스의 값을 문자열로 반환 |
+
 
 ### Array 객체
 ```javascript
+var arr = [
+  'zero', 'one', 'two', 'three', 'four',
+  'five', 'six', 'seven', 'eight', 'nine'
+];
+
+var arr = new Array(1, 2, 3);
+ 
+var arr2 = new Array(20); // 인수 하나만 넘겨줄때는 그 인수가 배열길이
+arr2.length // 20
+
+arr1 = Array.from('Hello');
+console.log(arr1); // [ 'H', 'e', 'l', 'l', 'o' ]
+ 
+// 유사 배열 객체를 새로운 배열을 변환하여 반환한다.
+arr2 = Array.from({ length: 2, 0: 'a', 1: 'b' });
+console.log(arr2); // [ 'a', 'b' ]
+ 
+// Array.from의 두번째 매개변수에게 배열의 모든 요소에 대해 호출할 함수를 전달할 수 있다.
+// 이 함수는 첫번째 매개변수에게 전달된 인수로 생성된 배열의 모든 요소를 인수로 전달받아 호출된다.
+var arr3 = Array.from({ length: 5 }, function (v, i) { return i; });
+console.log(arr3); // [ 0, 1, 2, 3, 4 ]
+
+arr1 = Array.of(1);
+console.log(arr1); // // [1]
+ 
+arr2 = Array.of(1, 2, 3);
+console.log(arr2); // [1, 2, 3]
+ 
+arr3 = Array.of('string');
+console.log(arr3); // 'string'
+
+// 리터럴 사용 방법
+var zeroArray = [0, 0, 0, 0, 0, 0];
+ 
+// fill()메소드 사용 방법
+var zeroArray2 = Array(6).fill(0);
+console.log(nullArray); // [0, 0, 0, 0, 0, 0]
+
+[1, 2, 3].fill(4)                // [4, 4, 4] 모두 4로 채룸
+[1, 2, 3].fill(4, 1)             // [1, 4, 4] 1번째 인덱스 부터 쭉 4로 채움
+[1, 2, 3].fill(4, 1, 2)          // [1, 4, 3] 1번째에서 2번째 인덱스 전까지 4로 채움
+
+// fill ()을 사용하여 모두 1의 행렬(2차원 배열) 만들기
+var arr = new Array(3);
+ 
+for (let i=0; i<arr.length; i++) {
+  arr[i] = new Array(4).fill(1); // 크기가 4이고 1로 채워진 배열 생성
+}
+ 
+console.log(arr[0][0]); // 1
+console.log(arr[1][0]); // 1
+console.log(arr[2][0]); // 1
+
+var foods = ['apple', 'banana', 'orange'];
+ 
+// foods 배열에 'orange' 요소가 존재하는지 확인
+if (foods.indexOf('orange') === -1) { // == if (!foods.includes('orange')) { } 
+  foods.push('orange');
+}
+ 
+console.log(foods); // ["apple", "banana", "orange"]
+
+var arr1 = [1, 2];
+var arr2 = [3, 4];
+ 
+// 배열 arr2를 원본 배열 arr1의 마지막 요소로 추가한 새로운 배열을 반환
+// 인수로 전달한 값이 배열인 경우, 배열을 해체하여 새로운 배열의 요소로 추가한다.
+let result = arr1.concat(arr2);
+console.log(result); // [1, 2, 3, 4]
+ 
+// 숫자를 원본 배열 arr1의 마지막 요소로 추가한 새로운 배열을 반환
+result = arr1.concat(3);
+console.log(result); // [1, 2, 3]
+ 
+//  배열 arr2와 숫자를 원본 배열 arr1의 마지막 요소로 추가한 새로운 배열을 반환
+result = arr1.concat(arr2, 5);
+console.log(result); // [1, 2, 3, 4, 5]
+ 
+// 원본 배열은 변경되지 않는다.
+console.log(arr1); // [1, 2]
+
+var arr = [1, 2, 3, 4];
+ 
+// 기본 구분자는 ','이다.
+// 원본 배열 arr의 모든 요소를 문자열로 변환한 후, 기본 구분자 ','로 연결한 문자열을 반환
+result = arr.join();
+console.log(result); // '1,2,3,4';
+ 
+// 원본 배열 arr의 모든 요소를 문자열로 변환한 후, 빈문자열로 연결한 문자열을 반환
+result = arr.join('');
+console.log(result); // '1234'
+ 
+// 원본 배열 arr의 모든 요소를 문자열로 변환한 후, 구분자 ':'로 연결한 문자열을 반환
+result = arr.join(':');
+console.log(result); // '1:2:3:4'
+
+arr1 = [1, 2];
+// push 메소드는 원본 배열을 직접 변경한다.
+arr1.push(3, 4);
+console.log(arr1); // [1, 2, 3, 4]
+ 
+var arr2 = [1, 2];
+// concat 메소드는 원본 배열을 변경하지 않고 새로운 배열을 반환한다.
+result = arr2.concat(3, 4);
+console.log(result); // [1, 2, 3, 4]
+
+arr[arr.length] = 3;
+console.log(arr); // [1, 2, 3]
+
+// ES6 spread 문법
+var newArr = [...arr, 3];
+// arr.push(3);
+ 
+console.log(newArr); // [1, 2, 3]
+
+var a = ['a', 'b', 'c'];
+var c = a.pop();
+ 
+// 원본 배열이 변경된다.
+console.log(a); // a --> ['a', 'b']
+console.log(c); // c --> 'c'
+
+var arr = [];
+ 
+arr.push(1); // [1]
+arr.push(2); // [1, 2]
+arr.push(3); // [1, 2, 3]
+ 
+arr.shift(); // [2, 3]
+arr.shift(); // [3]
+arr.shift(); // []
+
+var items = ['a', 'b', 'c'];
+ 
+// items[0]부터 items[1] 이전(items[1] 미포함)까지 반환
+var res = items.slice(0, 1);
+console.log(res);  // [ 'a' ]
+ 
+// items[1]부터 items[2] 이전(items[2] 미포함)까지 반환
+res = items.slice(1, 2);
+console.log(res);  // [ 'b' ]
+ 
+// items[1]부터 이후의 모든 요소 반환
+res = items.slice(1);
+console.log(res);  // [ 'b', 'c' ]
+ 
+// 인자가 음수인 경우 배열의 끝에서 요소를 반환
+res = items.slice(-1);
+console.log(res);  // [ 'c' ]
+ 
+res = items.slice(-2);
+console.log(res);  // [ 'b', 'c' ]
+ 
+// 모든 요소를 반환 (= 복사본(shallow copy) 생성)
+res = items.slice();
+console.log(res);  // [ 'a', 'b', 'c' ]
+
+var todos = [
+  { id: 1, content: 'HTML', completed: false },
+  { id: 2, content: 'CSS', completed: true },
+  { id: 3, content: 'Javascript', completed: false }
+];
+ 
+// shallow copy
+var _todos = todos.slice();
+// const _todos = [...todos];
+console.log(_todos === todos); // false
+ 
+// 배열의 요소는 같다. 즉, 얕은 복사
+console.log(_todos[0] === todos[0]); // true
+
+var sum = function() {
+  // 유사 배열 객체 => Array
+  const arr = Array.prototype.slice.call(arguments); // [1, 2, 3]
+  const arr0 = [].slice.call(arguments); // [1, 2, 3]
+  // Spread 문법
+  const arr1 = [...arguments]; // [1, 2, 3]
+  // Array.from 메소드는 유사 배열 객체를 복사하여 배열을 생성한다.
+  const arr2 = Array.from(arguments); // [1, 2, 3]
+}
+ 
+console.log(sum(1, 2, 3));
+
+var items1 = [1, 2, 3, 4];
+ 
+// items[1]부터 2개의 요소를 제거하고 제거된 요소를 배열로 반환
+var res1 = items1.splice(1, 2);
+ 
+// 원본 배열이 변경된다.
+console.log(items1); // [ 1, 4 ]
+// 제거한 요소가 배열로 반환된다.
+console.log(res1);   // [ 2, 3 ]
+ 
+// -------------------------------------------
+ 
+const items2 = [1, 2, 3, 4];
+ 
+// items[1]부터 모든 요소를 제거하고 제거된 요소를 배열로 반환
+const res2 = items2.splice(1);
+ 
+// 원본 배열이 변경된다.
+console.log(items2); // [ 1 ]
+// 제거한 요소가 배열로 반환된다.
+console.log(res2);   // [ 2, 3, 4 ]
+
+var items = [1, 2, 3, 4];
+ 
+// items[1]부터 2개의 요소를 제거하고 그자리에 새로운 요소를 추가한다. 제거된 요소가 반환된다.
+var res = items.splice(1, 2, 20, 30);
+ 
+// 원본 배열이 변경된다.
+console.log(items); // [ 1, 20, 30, 4 ]
+// 제거한 요소가 배열로 반환된다.
+console.log(res);   // [ 2, 3 ]
+
+var items = [1, 2, 3, 4];
+ 
+// items[1]부터 0개의 요소를 제거하고 그자리(items[1])에 새로운 요소를 추가한다. 제거된 요소가 반환된다.
+var res = items.splice(1, 0, 100);
+ 
+// 원본 배열이 변경된다.
+console.log(items); // [ 1, 100, 2, 3, 4 ]
+// 제거한 요소가 배열로 반환된다.
+console.log(res);   // [ ]
+
+var items = [1, 4];
+var items2 = [2, 3];
+ 
+// 원본배열 item를 아규먼트 인자로 items2를 받아서,
+// items[1]부터 0개의 요소를 제거하고 그자리(items[1])에 새로운 배열를 추가한다. 
+ 
+// 이렇게 하면 아규먼트가 2차원형태가 되어버린다. ( 1, [ 2, 3 ], 4 )
+items.splice(1, 0, items2);
+ 
+// apply로 items를 주고, [1, 0].concat([2, 3])의 결과 인자 1,0, 2,3을 주게되는 꼴이 된다.
+Array.prototype.splice.apply(items, [1, 0].concat([2, 3]));
+ 
+items.splice(1,0, 2,3)
+// == [].splice.apply(items, [1, 0].concat([2, 3]));
+// == items.splice(1, 0, ...items);
+ 
+console.log(items); // [ 1, 2, 3, 4 ]
 ```
+
+#### Array 관련 메소드
+| 메소드 | 설명 |
+|-----------------|----------------------------------------|
+| Array.isArray() | 전달된 값이 Array 객체인지 아닌지를 검사 |
+| Array.from() | 배열과 비슷한 객체와 반복할 수 있는 객체를 배열처럼 변환 |
+| Array.of() | 인수의 수나 타입에 상관없이 인수로 전달받은 값을 가지고 새로운 Array 인스턴스를 생성 |
+| 인스턴스명.push() | 하나 이상의 요소를 배열의 가장 마지막에 추가하고, 배열의 총 길이를 반환 |
+| 인스턴스명.pop() | 배열의 가장 마지막 요소를 제거하고, 그 제거된 요소를 반환 |
+| 인스턴스명.shift() | 배열의 가장 첫 요소를 제거하고, 그 제거된 요소를 반환 |
+| 인스턴스명.unshift() | 하나 이상의 요소를 배열의 가장 앞에 추가하고, 배열의 총 길이를 반환 |
+| 인스턴스명.reverse() | 배열 요소의 순서를 전부 반대로 교체 |
+| 인스턴스명.sort() | 해당 배열의 배열 요소들을 알파벳 순서에 따라 정렬 |
+| 인스턴스명.splice() | 기존의 배열 요소를 제거하거나 새로운 배열 요소를 추가하여 배열의 내용을 변경 |
+| 인스턴스명.copyWithin() | 해당 배열에서 일련의 요소들을 복사하여, 명시된 위치의 요소들을 교체 |
+| 인스턴스명.fill() | 시작 인덱스부터 종료 인덱스 바로 앞까지의 모든 배열 요소를 특정 값으로 교체 |
+| 인스턴스명.join() | 배열의 모든 요소를 하나의 문자열로 반환 |
+| 인스턴스명.slice() | 전달받은 시작 인덱스부터 종료 인덱스 바로 앞까지의 모든 배열 요소를 추출하여 만든 새로운 배열을 반환 |
+| 인스턴스명.concat() | 해당 배열의 뒤에 인수로 전달받은 배열을 합쳐서 만든 새로운 배열을 반환 |
+| 인스턴스명.toString() | 해당 배열의 모든 요소를 하나의 문자열로 반환 |
+| 인스턴스명.toLocaleString() | 해당 배열의 모든 요소를 하나의 문자열로 반환 |
+| 인스턴스명.indexOf() | 전달받은 값과 동일한 배열 요소가 처음으로 등장하는 위치의 인덱스를 반환 |
+| 인스턴스명.lastIndexOf() | 전달받은 값과 동일한 배열 요소가 마지막으로 등장하는 위치의 인덱스를 반환 |
+| 인스턴스명.forEach() | 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행 |
+| 인스턴스명.map() | 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 실행 결과를 새로운 배열로 반환 |
+| 인스턴스명.filter() | 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 true인 요소들만을 새로운 배열에 담아 반환 |
+| 인스턴스명.every() | 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 모두 true일 때에만 true를 반환 |
+| 인스턴스명.some() | 해당 배열의 모든 요소에 대하여 반복적으로 명시된 콜백 함수를 실행한 후, 그 결괏값이 하나라도 true이면 true를 반환 |
+| 인스턴스명.reduce() | 해당 배열의 모든 요소를 하나의 값으로 줄이기 위해, 두 개의 인수를 전달받는 콜백 함수를 실행 |
+| 인스턴스명.reduceRight() | 해당 배열의 모든 요소를 하나의 값으로 줄이기 위해, 두 개의 인수를 전달받는 콜백 함수를 실행 |
+| 인스턴스명.entries() | 배열 요소별로 키와 값의 한 쌍으로 이루어진 새로운 배열 반복자 객체(Array Iterator Object)를 배열 형태로 반환 |
+| 인스턴스명.keys() | 배열 요소별로 키(key)만 포함하는 새로운 배열 반복자 객체를 배열 형태로 반환 |
+| 인스턴스명.values() | 배열 요소별로 값(value)만 포함하는 새로운 배열 반복자 객체를 배열 형태로 반환 |
+| 인스턴스명.find() | 검사를 위해 전달받은 함수를 만족하는 배열 요소의 값을 반환함. 만족하는 값이 없으면 undefined를 반환 |
+| 인스턴스명.findIndex() | 검사를 위해 전달받은 함수를 만족하는 배열 요소의 인덱스를 반환함. 만족하는 값이 없으면 -1을 반환 |
 
 ### 기타 객체
 
 #### 타이머 객체
+    - setTimeout : 주어진 시간이 지나면 한 번만 실행하게 됨
+    - setInterval : 정해진 시간을 주기로 계속 실행하게 됨
 ```javascript
-```
+//setTimeout
+//기본 사용
+var sayHi = function() {
+  alert('안녕하세요.');
+}
+setTimeout(function() { sayHi(); }, 1000);
 
-#### 대화상자 객체
-```javascript
+//매개변수 활용
+function sayHi2(who, phrase) {
+  alert( who + ' 님, ' + phrase );
+}
+setTimeout(function() { sayHi2(); }, 1000, "홍길동", "안녕하세요."); // 홍길동 님, 안녕하세요.
+
+//익명의 함수(람다식 활용)
+setTimeout(() => alert('안녕하세요.'), 1000);
+
+//타임아웃 취소하기
+var timerId = setTimeout(() => alert('안녕하세요.'), 1000);
+clearTimeout(timerId);
+
+//setInterval
+// 2초 간격으로 메시지를 보여줌
+let timerId = setInterval(() => alert('째깍'), 2000);
+ 
+// 5초 후에 정지
+setTimeout(() => { 
+	clearInterval(timerId); 
+	alert('정지'); 
+}, 5000);
 ```
 
 ---------------------------------------------------------------
@@ -2214,25 +3005,474 @@ Math.sin(x), Math.cos(x), Math.tan(x),Math.asin(x), Math.acos(x), Math.atan(x), 
 ## BOM(Browser Object Model) 객체
 
 ### Window 객체
-```javascript
+    브라우저 창 객체, BOM의 최상위 객체
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>window객체</title>
+        <style>
+            body{ height: 3000px; } /* 세로스크롤바 생성 */
+        </style>
+        <script>
+            //창사이즈 확인 속성
+            //1. innerWidth : 창의 가로폭(스크롤바제외)
+            //2. outerWidth : 창의 가로폭(모두포함)
+            //3. innerHeight : 창의 높이(스크롤바제외)
+            //4. outerHeight : 창의 높이(모두포함)
+
+            document.write('innerWidth : ' + window.innerWidth + '<br>');
+            document.write('outerWidth : ' + window.outerWidth);
+            for(var key in window){     //window 객체가 가지는 속성, 하위 객체, 메소드를 출력
+                document.write("<br>"+key+" : "+window[key]);
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
 ```
+
+#### window 객체의 속성
+| 속성 | 설명 |
+|-----------|----------------------------------------------|
+| closed | 창이 닫혀 있는지 열려 있는지를 불표현식으로 반환 닫혀 있으면 true반환, 열려 있으면 false반환 |
+| innerHeight | 창의 콘텐츠 영역 높이를 반환 - 스크롤바나 제목표시줄 등은 제외 |
+| innerWidth | 창의 콘텐츠 영역 폭을 반환 - - 스크롤바나 제목표시줄 등은 제외 |
+| length | 현재 창의 아이프레임 개수를 숫자로 반환 |
+| outerHeight | 창의 모든 인터페이스요소(스크롤바등)을 포함한 높이를 반환 |
+| outerWidth | 창의 모든 인터페이스요소(스크롤바등)을 포함한 높이를 반환 |
+| pageXOffset | 현재 문서가 창의 왼쪽에서 얼마나 스크롤되어 있는지를 픽셀수치로 반환 |
+| pageYOffset | 현재 문서가 창의 위쪽에서 얼마나 스크롤되어 있는지를 픽셀수치로 반환 |
+| parent | 아이프레임으로 되어 있는 페이지의 부모가되는 페이지를 선택하는 속성 |
+| screenLeft | 창이 화면 좌측을 기준으로 얼마큼 떨어져 있는지 좌표를 반환 |
+| screenTop | 창이 화면 상단을 기준으로 얼마큼 떨어져 있는지 좌표를 반환 |
+| screenX | 창이 화면 좌측을 기준으로 얼마큼 떨어져 있는지 좌표를 반환 |
+| screenY | 창이 화면 상단을 기준으로 얼마큼 떨어져 있는지 좌표를 반환 |
+| self | 현재 창을 반환 |
+| top | 현재 창의 최상위 브라우저 창을 반환 |
+
+
+#### window 객체의 관련 메소드
+| 메서드 | 설명 |
+|-----------|----------------------------------------------|
+| close() | 창을 닫는 메서드 - 매개변수는 없음 |
+| moveBy(x,y) | 창을 상대적으로 이동시키는 메서드 |
+| moveTo(x,y) | 창을 절대적으로 이동시키는 메서드 |
+| open(url,name,specs,replace) | 새창 혹은 새탭으로 창을 여는 메서드 |
+| print() | 현재 창을 인쇄할수 있는 창을 띄워주는 메서드 |
+| resizeBy(w,h) | 창 사이즈를 상대적으로 변경시키는 메서드 |
+| resizeTo(w,h) | 창 사이즈를 절대적으로 변경시키는 메서드 |
+| scrollBy(x,y) | 창의 스크롤바 위치를 상대적으로 이동시키는 메서드 |
+| scrollTo(x,y) | 창의 스크롤바 위치를 절대적으로 이동시키는 메서드 |
+| stop() | 창이 로드되는 것을 멈추는 메서드 - ie 및 edge는 사용 불가능 |
+
+#### window 객체의 open 메소드의 매개변수
+| 매개변수 | 설명 |
+|-----------|----------------------------------------------|
+| URL | 창으로 띄울 주소를 담는 매개변수 |
+|-----------|----------------------------------------------|
+| name | 창이 띄워질 위치(대상)을 지정하는 매개변수 |
+|    | _blank : url의 주소가 새창 혹은 새탭으로 띄워짐 - 기본값 |
+|    | _parent : 아이프레임의 부모가 되는 페이지로 url주소가 띄워짐 |
+|    | _self : 현재 페이지로 url주소가 띄워짐 => 주소가 바뀜 |
+|    | _top : 로딩되는 모든 frameset으로 url주소가 띄워짐 |
+|    | name : 새창으로 띄워진 곳의 이름을 작성하면 그곳에서 url주소가 띄워짐 |
+|-----------|----------------------------------------------|
+| specs	| 띄워지는 창에 대한 옵션을 설정, 쉼표로 아이템을 구분해서 작성 |
+|    | window.open('주소'.'_blank','옵션=값,옵션=값',true); |
+|    | specs 값 | 
+|    | (대부분의 값은 yes|no|1|0으로 지정하면 된다.) (위치나 크기는 수치만 적고 픽셀단위로 인정된다) |
+| channelmode | 극장 모드로 띄울지를 지정하는 옵션, IE만 가능 |
+| directories | 디렉토리 버튼 추가 여부, IE만 가능하고 구버전들에게만 있음 |
+| fullscreen | 풀스크린모드로 띄울지를 지정하는 옵션, IE만 가능 |
+| height | 창의 높이를 지정하는 옵션, 최소값은 100으로 처리 |
+| left | 창의 왼쪽 좌표를 지정하는 옵션, 음수는 지정되지 않음 |
+| location | 주소표시줄을 표시할지 지정하는 옵션, 오페라브라우저에만 사용가능 |
+| menubar | 메뉴바를 표시할지 지정하는 옵션 |
+| resizable | 창사이즈를 변경하지 지정하는 옵션, IE만 가능 |
+| scrollbars | 스크롤바를 표시할지 지정하는 옵션, 다만, 로딩되는 페이지의 스타일이나 스크립트가 우선한다. |
+| status | 상태표시줄을 표시할지 지정하는 옵션 |
+| titlebar | 타이틀바를 표시할지 지정하는 옵션 |
+| toolbar | 브라우저 툴바를 표시할지 지정하는 옵션, IE와 Firefox만 가능 |
+| top | 창의 상단 좌표를 지정하는 옵션, 음수는 지정되지 않음 |
+| width | 창의 가로폭을 지정하는 옵션, 최소사이즈는 100으로 처리 |
+|-----------|----------------------------------------------|
+| replace | url로 작성한 주소를 새항목으로 만들지, history 목록의 현재 항목으로 대체할지를 지정 |
+|   | - true : history목록의 현재 문서로 대체 |
+|   | - false : 주소를 새 항목으로 대체 |
+|-----------|----------------------------------------------|
+
 
 ### Screen 객체
-```javascript
+    운영체제의 바탕 화면 객체
+```html
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>screen 객체</title>
+        <style>
+            body{ height: 3000px; } /* 세로스크롤바 생성 */
+        </style>
+        <script>
+        for(var key in screen){     //screen 객체가 가지는 속성, 하위 객체, 메소드를 출력
+                document.write("<br>"+key+" : "+screen[key]);
+        }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
 ```
+
+#### Screen 객체의 속성 
+| 속성 | 설명 |
+|-----------|----------------------------------------------|
+| width | 화면의 너비를 반환 |
+| height | 화면의 높이를 반환 |
+| availWidth | 화면에서 작업표시줄을 제외한 너비를 반환 |
+| availHeigth | 화면에서 작업표시줄을 제외한 높이를 반환 |
+| colorDepth | 화면에서 사용 가능한 색상 수를 반환 |
+| pixelDepth | 화면의 색상 해상도를 반환 |
+
 
 ### Location 객체
-```javascript
+    주소표시줄(URL) 객체
+```html
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>location 객체</title>
+        <style>
+            body{ height: 3000px; } /* 세로스크롤바 생성 */
+        </style>
+        <script>
+        for(var key in location){     //location 객체가 가지는 속성, 하위 객체, 메소드를 출력
+                document.write("<br>"+key+" : "+location[key]);
+        }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
 ```
+
+#### Location 객체의 속성
+| 속성 | 설명 |
+|-----------|----------------------------------------------|
+| hash | hash속성은 url의 해시기호(#)를 포함하여 주소를 설정하거나 반환하는 속성 |
+| host | host속성은 url의 호스트명과 포트를 설정하거나 반환하는 속성 |
+| hostname | hostname속성은 url의 호스트명을 설정하거나 반환하는 속성 |
+| href | href속성은 현재 페이지의 전체 url를 설정하거나 반환하는 속성 |
+| origin | origin속성은 url의 프로토콜, 호스트명, 포트번호를 반환하는 속성 |
+| pathname | pathname속성은 url의 경로이름을 설정하거나 반환하는 속성 |
+| port | port속성은 서버가 url에 사용하는 포트번호를 설정하거나 반환하는 속성 |
+| protocol | protocol속성은 콜론을 포함하여 현재 url의 프로토콜을 설정하거나 반환하는 속성 |
+| search | search속성은 ?(물음표)를 포함하여 url의 쿼리 문자열을 설정하거나 반환하는 속성 |
+
+
+#### Location 객체의 관련 메소드
+| 메서드 | 설명 |
+|-----------|----------------------------------------------|
+| assign(url) | 주소표시줄의 주소를 매개변수의 url주소로 변경하는 메서드 현재 문서 기록에서 url이 남아 [뒤로가기]버튼을 사용하여 원래 페이지로 돌아갈수 있습니다.  최근 크롬에서는 안되는 이슈가 있습니다. |
+| replace(url) | 주소표시줄의 주소를 매개변수의 url주소로 변경하는 메서드 현재 문서 기록에서 url을 제거하여 [뒤로가기]버튼을 눌러 원래 페이지로 돌아갈수 없습니다. |
+| reload() | 주소표시줄을 새로고침하는 메서드 |
 
 ### History 객체
-```javascript
+    방문했던 정보를 기록하고 있는 객체
+```html
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>history 객체</title>
+        <style>
+            body{ height: 3000px; } /* 세로스크롤바 생성 */
+        </style>
+        <script>
+        for(var key in history){     //history 객체가 가지는 속성, 하위 객체, 메소드를 출력
+                document.write("<br>"+key+" : "+history[key]);
+        }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
 ```
 
+#### History 객체의 속성과 메소드
+| 속성 또는 메소드 | 설명 |
+|-----------|----------------------------------------------|
+| length | 현재 브라우저 창의 기록 목록에 있는 URL 수를 반환하는 속성 |
+| back() | 현재 브라우저 창의 기록 목록 중 이전목록으로 보내는 메서드 |
+| forward() | 현재 브라우저 창의 기록 목록 중 다음목록으로 보내는 메서드 |
+| go(n) | 현재 브라우저 창의 기록 목록에서 매개변수 숫자를 이용하여 그 목록으로 보내는 메서드. 음수는 이전으로 보내고, 양수를 작성하면 다음으로 처리 |
+
+
 ### Navigator 객체
-```javascript
+    브라우저 객체
+```html
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>navigator 객체</title>
+        <style>
+            body{ height: 3000px; } /* 세로스크롤바 생성 */
+        </style>
+        <script>
+        for(var key in navigator){     //navigator 객체가 가지는 속성, 하위 객체, 메소드를 출력
+                document.write("<br>"+key+" : "+navigator[key]);
+        }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
 ```
+
+#### Navigater 객체의 속성과 메소드
+| 속성 또는 메소드 | 설명 |
+|-----------|----------------------------------------------|
+| appCodeName | 브라우저의 코드명을 반환. 모든 최신 브라우저는 호환성을 이유로 [Mozilla]를 반환하는 속성 |
+| appName | 브라우저의 이름을 반환. IE11, Firefox, Chrome, Safari는 [Netscape]를 반환. IE10이하의 버전은 [Microsoft Internet Explorer]를 반환. Opera는 [Opera]를 반환 속성 |
+| appVersion | 브라우저의 버전 정보를 반환 속성 |
+| cookieEnabled | 브라우저에서 쿠키를 사용할지 여부를 지정하는 불표현식(true/false)를 반환 속성 |
+| geolocation | 사용자의 위치를 찾는데 사용할 수 있는 Geolocation개체를 반환 속성 |
+| language | 브라우저의 언어버전을 반환 속성 |
+| onLine | 브라우저가 온라인 또는 오프라인 모드인지 불표현식(true/false)를 반환 속성 |
+| platform | 브라우저가 컴파일되는 플랫폼을 반환 속성 |
+| product | 브라우저의 엔진 이름을 반환. 모든 브라우저가 [Gecko]라고 반환 속성 |
+| userAgent | 브라우저에서 서버로 보낸 사용자 에이전트 헤더의 값을 반환 속성 |
+| javaEnabled()	브라우저에서 javascript를 사용할 수 있는지 불표현식(true/false)로 반환하는 메소드 |
+
 
 ## DOM(Document Object Model) 객체
 
 ### Document Element
+```javascript
+//태그 선택
+var selectedItem = document.getElementsByTagName("li"); // 모든 <li> 요소를 선택함.
+for (var i = 0; i < selectedItem.length; i++) {
+    selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
+}
+
+//아이디 선택
+var selectedItem = document.getElementById("even"); // 아이디가 "even"인 요소를 선택함.
+selectedItem.style.color = "red"; // 선택된 요소의 텍스트 색상을 변경함.
+
+//클래스 선택
+var selectedItem = document.getElementsByClassName("odd"); // 클래스가 "odd"인 모든 요소를 선택함.
+for (var i = 0; i < selectedItem.length; i++) {
+    selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
+}
+
+//name 속성을 활용한 선택
+var selectedItem = document.getElementsByName("first"); // name 속성값이 "first"인 모든 요소를 선택함.
+for (var i = 0; i < selectedItem.length; i++) {
+    selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
+}
+
+//css 선택자를 이용한 선택
+var selectedItem = document.querySelectorAll("li.odd"); // 클래스가 "odd"인 요소 중에서 <li> 요소만을 선택함.
+for (var i = 0; i < selectedItem.length; i++) {
+    selectedItem.item(i).style.color = "red"; // 선택된 모든 요소의 텍스트 색상을 변경함.
+}
+
+var title = document.title; // <title> 요소를 선택함.
+document.write(title);
+
+var str = document.getElementById("text");
+str.innerHTML = "이 문장으로 바뀌었습니다!";
+
+var link = document.getElementById("link");          // 아이디가 "link"인 요소를 선택함.
+link.href = "/javascript/intro"; // 해당 요소의 href 속성값을 변경함.
+link.innerHTML = "자바스크립트 수업 바로 가기!";     // 해당 요소의 내용을 변경함.
+
+var str = document.getElementById("text");                 // 아이디가 "text"인 요소를 선택함.
+function changeRedColor() { str.style.color = "red"; }     // 해당 요소의 글자색을 빨간색으로 변경함.
+function changeBlackColor() { str.style.color = "black"; } // 해당 요소의 글자색을 검정색으로 변경함.
+
+// HTML 문서의 모든 자식 노드 중에서 두 번째 노드의 이름을 선택함.
+document.getElementById("document").innerHTML = document.childNodes[1].nodeName;           // HTML
+
+// html 노드의 모든 자식 노드 중에서 첫 번째 노드의 이름을 선택함.
+document.getElementById("html").innerHTML = document.childNodes[1].childNodes[0].nodeName; // HEAD
+
+// 아이디가 "heading"인 요소의 첫 번째 자식 노드의 노드값을 선택함.
+var headingText = document.getElementById("heading").firstChild.nodeValue;
+document.getElementById("text1").innerHTML = headingText;
+document.getElementById("text1").firstChild.nodeValue = headingText;
+
+// 아이디가 "heading"인 요소의 첫 번째 자식 노드의 타입을 선택함.
+var headingType = document.getElementById("heading").firstChild.nodeType;
+document.getElementById("head").innerHTML = headingType;           // 3
+document.getElementById("document").innerHTML = document.nodeType; // 9
+
+// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
+var listItems = document.getElementById("list").childNodes;
+
+// 자식 노드들 중 첫 번째 li 요소의 내용을 변경함.
+listItems[1].firstChild.nodeValue = "HTML 요소의 내용을 변경했어요!";
+
+// 아이디가 "list"인 요소의 모든 자식 노드들을 선택함.
+var listItems = document.getElementById("list").childNodes;
+
+// 자식 노드들 중 첫 번째 노드의 값을 출력함.
+document.write(listItems[0].nodeValue + "<br>");
+
+// 자식 노드들 중 두 번째 노드의 자식 노드 중 첫 번째 노드의 값을 출력함.
+document.write(listItems[1].firstChild.nodeValue + "<br>");
+
+// 자식 노드들 중 세 번째 노드의 값을 출력함.
+document.write(listItems[2].nodeValue);
+
+var listItems = document.getElementsByTagName("li");              // 모든 <li> 요소들을 선택함.
+document.getElementById("text").innerHTML = "이 노드 리스트의 길이는 " + listItems.length + "개 입니다.<br>"; // 모든 자식 노드들의 개수를 반환함.
+function changeTextColor() {
+    for (var i = 0; i < listItems.length; i++) {
+        listItems[i].style.color = "orange";                      // 모든 자식 노드들의 글자색을 변경함.
+    }
+}
+
+
+//자식 노드 추가
+function appendNode() {
+    var parent = document.getElementById("list");  // 아이디가 "list"인 요소를 선택함.
+    var newItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
+    parent.appendChild(newItem);                   // 해당 요소의 맨 마지막 자식 노드로 추가함.
+}
+
+function appendNode2() {
+    var parent = document.getElementById("list");           // 아이디가 "list"인 요소를 선택함.
+    var criteriaItem = document.getElementById("criteria"); // 아이디가 "criteria"인 요소를 선택함.
+    var newItem = document.getElementById("item");          // 아이디가 "item"인 요소를 선택함.
+    parent.insertBefore(newItem, criteriaItem); // 해당 노드를 기준이 되는 자식 노드의 바로 앞에 추가함.
+}
+
+var text = document.getElementById("text").firstChild; // 아이디가 "text"인 요소의 텍스트 노드를 선택함.
+function appendText() {
+    text.insertData(6, " 나른한 "); // 텍스트 노드의 6번째 문자부터 " 나른한 "이란 텍스트를 추가함.
+}
+
+//요소의 생성
+function createNode() {
+    var criteriaNode = document.getElementById("text"); // 기준이 되는 요소로 아이디가 "text"인 요소를 선택함.
+    var newNode = document.createElement("p");          // 새로운 <p> 요소를 생성함.
+    newNode.innerHTML = "새로운 단락입니다.";
+    document.body.insertBefore(newNode, criteriaNode);  // 새로운 요소를 기준이 되는 요소 바로 앞에 추가함.
+}
+
+function createAttrNode() {
+    var text = document.getElementById("text");           // 아이디가 "text"인 요소를 선택함.
+    var newAttribute = document.createAttribute("style"); // 새로운 style 속성 노드를 생성함.
+    newAttribute.value = "color:red";
+    text.setAttributeNode(newAttribute);                  // 해당 요소의 속성 노드로 추가함.
+}
+
+function createTextNode() {
+    var elementNode = document.getElementById("text");           // 아이디가 "text"인 요소를 선택함.
+    var newText = document.createTextNode("새로운 텍스트에요!"); // 새로운 텍스트 노드를 생성함.
+    elementNode.appendChild(newText);                            // 해당 요소의 자식 노드로 추가함.
+}
+
+var parent = document.getElementById("list");      // 아이디가 "list"인 요소를 선택함.
+var removedItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
+parent.removeChild(removedItem);                   // 지정된 요소를 삭제함.
+
+var text = document.getElementById("text"); // 아이디가 "text"인 요소를 선택함.
+text.removeAttribute("style");              // 해당 요소의 "style" 속성을 제거함.
+
+//요소 복제
+function cloneElement() {
+    var parent = document.getElementById("list");     // 아이디가 "list"인 요소를 선택함.
+    var originItem = document.getElementById("item"); // 아이디가 "item"인 요소를 선택함.
+    parent.appendChild(originItem.cloneNode(true));   // 해당 노드를 복제하여 리스트의 맨 마지막에 추가함.
+}
+
+//요소의 값 조작
+var para = document.getElementById("text"); // 아이디가 "text"인 요소를 선택함.
+function changeText() {
+    para.firstChild.nodeValue = "텍스트 변경 완료!";
+}
+
+var para;
+
+function changeAttribute() {
+    // 모든 <p> 요소중에서 첫 번째 요소에 클래스 속성값으로 "para"를 설정함.
+    document.getElementsByTagName("p")[0].setAttribute("class", "para");
+    // 클래스가 설정되면 해당 클래스에 설정되어 있던 스타일이 자동으로 적용됨.
+}
+
+var parent = document.getElementById("parent"); // 부모 노드를 선택함.
+var first = document.getElementById("first");
+var third = document.getElementById("third");
+function changeNode() {
+    parent.replaceChild(third, first);          // first 요소를 삭제하고, 그 대신 third 요소를 삽입함.
+}
+
+var text = document.getElementById("text").firstChild; // 아이디가 "text"인 요소의 텍스트 노드를 선택함.
+function changeText() {
+    text.replaceData(7, 4, "저녁 7"); // 텍스트 노드의 7번째 문자부터 4개의 문자를 "저녁 7"로 교체함.
+}
+```
+
+#### DOM 요소의 메소드 종류
+| 메소드 | 설명 |
+|-----------|----------------------------------------------|
+| document.getElementsByTagName(태그이름) | 해당 태그 이름의 요소를 모두 선택 |
+| document.getElementById(아이디) | 해당 아이디의 요소를 선택 |
+| document.getElementsByClassName(클래스이름) | 해당 클래스에 속한 요소를 모두 선택 |
+| document.getElementsByName(name속성값) | 해당 name 속성값을 가지는 요소를 모두 선택 |
+| document.querySelectorAll(선택자) | 해당 선택자로 선택되는 요소를 모두 선택 |
+| document.createElement(HTML요소) | 지정된 HTML 요소를 생성 |
+| document.write(텍스트) | HTML 출력 스트림을 통해 텍스트를 출력 |
+
+
+#### DOM 요소의 객체 집합
+| 객체 집합 | 설명 |
+|-----------|----------------------------------------------|
+| document.anchors | name 속성을 가지는 <a>요소를 모두 반환 |
+| document.applets | applet 요소를 모두 반환함. (HTML5에서 제외됨) |
+| document.body | <body>요소를 반환 |
+| document.cookie | HTML 문서의 쿠키(cookie)를 반환 |
+| document.domain | HTML 문서가 위치한 서버의 도메인 네임(domain name)을 반환 |
+| document.forms | <form>요소를 모두 반환 |
+| document.images | <img>요소를 모두 반환 |
+| document.links | href 속성을 가지는 <area>요소와 <a>요소를 모두 반환 |
+| document.referrer | 링크(linking)되어 있는 문서의 URI를 반환 |
+| document.title | <title>요소를 반환 |
+| document.URL | HTML 문서의 완전한 URL 주소를 반환 |
+| document.baseURI | HTML 문서의 절대 URI(absolute base URI)를 반환 |
+| document.doctype | HTML 문서의 문서 타입(doctype)을 반환 |
+| document.documentElement | <html>요소를 반환 |
+| document.documentMode | 웹 브라우저가 사용하고 있는 모드를 반환 |
+| document.documentURI | HTML 문서의 URI를 반환 |
+| document.domConfig | HTML DOM 설정을 반환 (더는 사용하지 않음) | 
+| document.embeds | <embed>요소를 모두 반환 |
+| document.head | <head>요소를 반환 |
+| document.implementation | HTML DOM 구현(implementation)을 반환 |
+| document.inputEncoding | HTML 문서의 문자 인코딩(character set) 형식을 반환 |
+| document.lastModified | HTML 문서의 마지막 갱신 날짜 및 시간을 반환 |
+| document.readyState HTML | 문서의 로딩 상태(loading status)를 반환 |
+| document.scripts | <script>요소를 모두 반환 |
+| document.strictErrorChecking | 오류의 강제 검사 여부를 반환 |
+
+
+#### DOM 요소의 노드
+| 노드 | 설명 |
+|-----------|----------------------------------------------|
+| 문서 노드(document node) | HTML 문서 전체를 나타내는 노드 |
+| 요소 노드(element node) | 모든 HTML 요소는 요소 노드이며, 속성 노드를 가질 수 있는 유일한 노드 |
+| 속성 노드(attribute node) | 모든 HTML 요소의 속성은 속성 노드이며, 요소 노드에 관한 정보를 가지고 있음. 하지만 해당 요소 노드의 자식 노드(child node)에는 포함되지 않음. |
+| 텍스트 노드(text node) | HTML 문서의 모든 텍스트는 텍스트 노드 | 
+| 주석 노드(comment node) | HTML 문서의 모든 주석은 주석 노드 |

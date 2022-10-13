@@ -33,14 +33,14 @@
 <body>
     <h2 class="tit">계산기</h2>
     <form id="calculator">
-        <input type="text" id="expression" readonly>
+        <input type="text" id="expression">
         <div id="display"></div>
         <hr>
         <div class="btn_area">
             <input type="button" value="7" onclick="compute('7')" />
             <input type="button" value="8" onclick="compute('8')" />
             <input type="button" value="9" onclick="compute('9')" />
-            <input type="button" value="AC" onclick="clear()" class="clear_btn" />
+            <input type="button" value="AC" id="ac" class="clear_btn" />
             <input type="button" value="4" onclick="compute('4')" />
             <input type="button" value="5" onclick="compute('5')" />
             <input type="button" value="6" onclick="compute('6')" />
@@ -64,6 +64,11 @@
     function compute(ch){ //문자열 결합
         expression.value = expression.value + ch;
     }    
+    var ac = document.getElementById("ac");
+    ac.addEventListener("click", function(){
+        expression.value=""; 
+        display.innerHTML=""; 
+    });
     function clear() { //원래내용 다시 초기화
         expression.value=""; 
         display.innerHTML=""; 
